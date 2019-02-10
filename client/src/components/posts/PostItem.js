@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import faker from "faker";
+import "./PostItem.css";
 
 class PostItem extends Component {
   renderButtons = post => {
@@ -24,7 +25,7 @@ class PostItem extends Component {
       <div className="item">
         <div className="right floated content">{this.renderButtons(post)}</div>
         <img className="ui avatar image" src={faker.image.image()} alt="" />
-        <div className="content">
+        <div className="content post-content">
           <p className="header">{post.title}</p>
           <div className="description">{post.body}</div>
           <Link to={`/posts/${post.id}`}>Go to the post</Link>

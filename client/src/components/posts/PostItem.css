@@ -1,0 +1,9 @@
+.ui.list > .item > img.image + .content.post-content {
+  width: calc(100% - 200px);
+  padding-left: 10px;
+}
+
+.ui.list > .item .header,
+.ui.list > .item .description {
+  margin-bottom: 10px;
+}

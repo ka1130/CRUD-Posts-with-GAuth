@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "actions";
 
@@ -17,13 +17,15 @@ class App extends Component {
     return (
       <div className="ui container">
         <Header />
-        <Route path="/comments/new" component={CommentCreate} />
-        <Route path="/comments/delete/:id" component={CommentDelete} />
-        <Route path="/comments/edit/:id" component={CommentEdit} />
-        <Route path="/comments/:id" component={CommentShow} />
-        <Route path="/not-authed" component={NotAuthedWarning} />
-        <Route path="/login" component={LoginForm} />
-        <Route exact path="/" component={CommentList} />
+        <Switch>
+          <Route exact path="/comments/new" component={CommentCreate} />
+          <Route path="/comments/delete/:id" component={CommentDelete} />
+          <Route path="/comments/edit/:id" component={CommentEdit} />
+          <Route path="/comments/:id" component={CommentShow} />
+          <Route path="/not-authed" component={NotAuthedWarning} />
+          <Route path="/login" component={LoginForm} />
+          <Route exact path="/" component={CommentList} />
+        </Switch>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import history from "../history";
 
 export default ChildComponent => {
   class ComposedComponent extends Component {
@@ -12,8 +13,8 @@ export default ChildComponent => {
     }
 
     shouldNavigateAway() {
-      if (!this.props.auth) {
-        this.props.history.push("/not-authed");
+      if (!this.props.auth.isSignedIn) {
+        history.push("/not-authed");
       }
     }
 

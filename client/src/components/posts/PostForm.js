@@ -40,22 +40,16 @@ class PostForm extends Component {
         onSubmit={this.props.handleSubmit(this.onSubmit)}
       >
         <Field
-          name="name"
-          label="Post name"
+          name="title"
+          label="Post title"
           component={this.renderInput}
-          placeholder={post ? post.name : ""}
+          placeholder={post ? post.title : ""}
         />
         <Field
           name="body"
           component={this.renderInput}
           label="Post body"
           placeholder={post ? post.body : ""}
-        />
-        <Field
-          name="email"
-          component={this.renderInput}
-          label="Email"
-          placeholder={post ? post.email : ""}
         />
         <button type="submit" className="ui button primary">
           Submit
@@ -67,16 +61,12 @@ class PostForm extends Component {
 
 const validate = formValues => {
   const errors = {};
-  if (!formValues.name) {
-    errors.name = "Please enter a post's name";
+  if (!formValues.title) {
+    errors.title = "Please enter a post's title";
   }
 
   if (!formValues.body) {
     errors.body = "Please enter a post's body";
-  }
-
-  if (!formValues.email || formValues.email.indexOf("@") < 0) {
-    errors.email = "Please enter a post's email";
   }
 
   return errors;

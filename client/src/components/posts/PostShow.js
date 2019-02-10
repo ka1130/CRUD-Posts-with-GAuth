@@ -20,7 +20,7 @@ class PostShow extends Component {
               <img src={faker.image.avatar()} alt="" />
             </span>
             <div className="content">
-              <span className="author">{post.name}</span>
+              <span className="author">{post.title}</span>
               <div className="metadata">
                 <div className="date">{post.email}</div>
               </div>

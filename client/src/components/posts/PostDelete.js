@@ -25,8 +25,7 @@ class PostDelete extends Component {
   };
 
   renderContent() {
-    // conditional below - show name if fetched
-    return "Are you sure you want to delete post with the name of ... ?";
+    return "Are you sure you want to delete this post?";
   }
 
   render() {

@@ -25,7 +25,7 @@ class PostItem extends Component {
         <div className="right floated content">{this.renderButtons(post)}</div>
         <img className="ui avatar image" src={faker.image.image()} alt="" />
         <div className="content">
-          <p className="header">{post.name}</p>
+          <p className="header">{post.title}</p>
           <div className="description">{post.body}</div>
           <Link to={`/posts/${post.id}`}>See post</Link>
         </div>

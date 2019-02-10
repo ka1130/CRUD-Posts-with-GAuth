@@ -7,9 +7,7 @@ A basic app with custom API allowing logged in users to perform CRUD actions on 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 The technology stack includes **React**, **React-Router-DOM**, **Redux**, **Redux-Form** and **Redux-Thunk**.
 
-The client part includes a custom middleware for validating JSON schema of the application state.
-
-Custom API is created with the use of **[json-server]**(https://github.com/typicode/json-server) and data is kept internally in `db.json` file.
+Custom API is created with the use of [json-server](https://github.com/typicode/json-server) and data is kept internally in `db.json` file.
 
 ## Setting up
 
@@ -30,5 +28,4 @@ The custom API data can be changed manually in the `api/db.json` file. The base 
 
 - update tests
 - describe stack and usage (Jest, Enzyme) in this file
-- make use of custom middleware
 - add link to deployed app on ghpages

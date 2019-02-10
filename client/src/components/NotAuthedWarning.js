@@ -1,17 +1,23 @@
 import React from "react";
 import Modal from "components/Modal";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import history from "../history";
 import GoogleAuth from "components/GoogleAuth";
 
 class NotAuthedWarning extends React.Component {
+  componentDidUpdate() {
+    if (this.props.auth.isSignedIn) {
+      history.push("/");
+    }
+  }
+
   renderActions() {
     return (
       <React.Fragment>
         <Link to="/" className="ui button right floated">
           Cancel
         </Link>
-
         <GoogleAuth />
       </React.Fragment>
     );
@@ -29,4 +35,6 @@ class NotAuthedWarning extends React.Component {
   }
 }
 
-export default NotAuthedWarning;
+const mapStateToProps = state => ({ auth: state.auth });
+
+export default connect(mapStateToProps)(NotAuthedWarning);

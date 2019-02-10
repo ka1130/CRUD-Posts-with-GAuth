@@ -4,7 +4,7 @@ import faker from "faker";
 
 class CommentItem extends Component {
   renderButtons = comment => {
-    if (this.props.auth) {
+    if (this.props.auth.isSignedIn) {
       return (
         <React.Fragment>
           <Link
@@ -31,7 +31,7 @@ class CommentItem extends Component {
         <div className="right floated content">
           {this.renderButtons(comment)}
         </div>
-        <img className="ui avatar image" src={faker.image.avatar()} alt="" />
+        <img className="ui avatar image" src={faker.image.image()} alt="" />
         <div className="content">
           <p className="header">{comment.name}</p>
           <div className="description">{comment.body}</div>

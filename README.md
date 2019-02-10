@@ -28,8 +28,7 @@ The custom API data can be changed manually in the `api/db.json` file. The base 
 
 ### To do:
 
-- add tests
+- update tests
 - describe stack and usage (Jest, Enzyme) in this file
 - make use of custom middleware
-- rewrite comments to posts (it feels strange to let a logged in user perform CRUD actions on anybody's comments :smirk:)
 - add link to deployed app on ghpages

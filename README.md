@@ -18,10 +18,13 @@ To boot it you should run `npm install` in both `api` and `client` directories a
 
 ## Google Auth
 
-lorem ipsum
+The client app users [Google APIs Client Library](https://developers.google.com/api-client-library/javascript/reference/referencedocs) for authentication. Once a user is logged in, they can perform CRUD operations on posts data.
 
-- GAuth: using the proper key in a .env file (add .env example and describe how to rewrite it)
-- perform CRUD actions
+In order for this to work, the `.env.example` file in the `client` root directory has to be overwritten to `.env` and the relevant OAuth key has to be added.
+
+## json-server API
+
+The custom API data can be changed manually in the `api/db.json` file. The base for the file is kept in a backup file `api/db_basic.json`
 
 ### To do:
 

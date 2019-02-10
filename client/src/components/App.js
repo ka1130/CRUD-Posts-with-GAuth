@@ -10,7 +10,6 @@ import CommentShow from "components/comments/CommentShow";
 import CommentDelete from "components/comments/CommentDelete";
 import Header from "components/Header";
 import NotAuthedWarning from "./NotAuthedWarning";
-import LoginForm from "./LoginForm";
 
 class App extends Component {
   render() {
@@ -23,7 +22,6 @@ class App extends Component {
           <Route path="/comments/edit/:id" component={CommentEdit} />
           <Route path="/comments/:id" component={CommentShow} />
           <Route path="/not-authed" component={NotAuthedWarning} />
-          <Route path="/login" component={LoginForm} />
           <Route exact path="/" component={CommentList} />
         </Switch>
       </div>

@@ -2,18 +2,17 @@ import React from "react";
 import Modal from "components/Modal";
 import { Link } from "react-router-dom";
 import history from "../history";
+import GoogleAuth from "components/GoogleAuth";
 
 class NotAuthedWarning extends React.Component {
   renderActions() {
     return (
       <React.Fragment>
-        <Link to="/login" className="ui button primary">
-          Login
-        </Link>
-        {/* ^redirect to login */}
-        <Link to="/" className="ui button">
+        <Link to="/" className="ui button right floated">
           Cancel
         </Link>
+
+        <GoogleAuth />
       </React.Fragment>
     );
   }

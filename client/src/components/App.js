@@ -3,11 +3,11 @@ import { Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "actions";
 
-import CommentCreate from "components/comments/CommentCreate";
-import CommentList from "components/comments/CommentList";
-import CommentEdit from "components/comments/CommentEdit";
-import CommentShow from "components/comments/CommentShow";
-import CommentDelete from "components/comments/CommentDelete";
+import PostCreate from "components/posts/PostCreate";
+import PostList from "components/posts/PostList";
+import PostEdit from "components/posts/PostEdit";
+import PostShow from "components/posts/PostShow";
+import PostDelete from "components/posts/PostDelete";
 import Header from "components/Header";
 import NotAuthedWarning from "./NotAuthedWarning";
 
@@ -17,12 +17,12 @@ class App extends Component {
       <div className="ui container">
         <Header />
         <Switch>
-          <Route exact path="/comments/new" component={CommentCreate} />
-          <Route path="/comments/delete/:id" component={CommentDelete} />
-          <Route path="/comments/edit/:id" component={CommentEdit} />
-          <Route path="/comments/:id" component={CommentShow} />
+          <Route exact path="/posts/new" component={PostCreate} />
+          <Route path="/posts/delete/:id" component={PostDelete} />
+          <Route path="/posts/edit/:id" component={PostEdit} />
+          <Route path="/posts/:id" component={PostShow} />
           <Route path="/not-authed" component={NotAuthedWarning} />
-          <Route exact path="/" component={CommentList} />
+          <Route exact path="/" component={PostList} />
         </Switch>
       </div>
     );

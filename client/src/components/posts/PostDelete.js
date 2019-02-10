@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { deleteComment } from "actions/index";
+import { deletePost } from "actions/index";
 import history from "../../history";
 import Modal from "components/Modal";
 
-class CommentDelete extends Component {
+class PostDelete extends Component {
   renderActions = () => {
     const { id } = this.props.match.params;
     console.log(id);
@@ -13,7 +13,7 @@ class CommentDelete extends Component {
       <React.Fragment>
         <button
           className="ui button negative"
-          onClick={() => this.props.deleteComment(id)}
+          onClick={() => this.props.deletePost(id)}
         >
           Delete
         </button>
@@ -26,7 +26,7 @@ class CommentDelete extends Component {
 
   renderContent() {
     // conditional below - show name if fetched
-    return "Are you sure you want to delete comment with the name of ... ?";
+    return "Are you sure you want to delete post with the name of ... ?";
   }
 
   render() {
@@ -45,5 +45,5 @@ class CommentDelete extends Component {
 
 export default connect(
   null,
-  { deleteComment: deleteComment }
-)(CommentDelete);
+  { deletePost: deletePost }
+)(PostDelete);

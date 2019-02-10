@@ -1,8 +1,8 @@
-import { FETCH_SINGLE_COMMENT } from "actions/types";
+import { FETCH_SINGLE_POST } from "actions/types";
 
 export default function(state = {}, action) {
   switch (action.type) {
-    case FETCH_SINGLE_COMMENT:
+    case FETCH_SINGLE_POST:
       return action.payload;
     default:
       return state;

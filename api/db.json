@@ -1,5 +1,5 @@
 {
-  "comments": [
+  "posts": [
     {
       "postId": 1,
       "id": 1,
@@ -74,6 +74,12 @@
       "email": "ka1130@o2.pl",
       "body": "njkhjhlhlhlhhhjj",
       "id": 12
+    },
+    {
+      "name": "Kamila Matla-Tomczyk",
+      "email": "ka1130@o2.pl",
+      "body": "nnnn",
+      "id": 13
     }
   ]
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 
-class CommentForm extends Component {
+class PostForm extends Component {
   renderError = ({ error, touched }) => {
     if (touched && error) {
       return (
@@ -33,7 +33,7 @@ class CommentForm extends Component {
   };
 
   render() {
-    const { comment } = this.props;
+    const { post } = this.props;
     return (
       <form
         className="ui form error"
@@ -41,21 +41,21 @@ class CommentForm extends Component {
       >
         <Field
           name="name"
-          label="Comment name"
+          label="Post name"
           component={this.renderInput}
-          placeholder={comment ? comment.name : ""}
+          placeholder={post ? post.name : ""}
         />
         <Field
           name="body"
           component={this.renderInput}
-          label="Comment body"
-          placeholder={comment ? comment.body : ""}
+          label="Post body"
+          placeholder={post ? post.body : ""}
         />
         <Field
           name="email"
           component={this.renderInput}
           label="Email"
-          placeholder={comment ? comment.email : ""}
+          placeholder={post ? post.email : ""}
         />
         <button type="submit" className="ui button primary">
           Submit
@@ -68,18 +68,18 @@ class CommentForm extends Component {
 const validate = formValues => {
   const errors = {};
   if (!formValues.name) {
-    errors.name = "Please enter a comment's name";
+    errors.name = "Please enter a post's name";
   }
 
   if (!formValues.body) {
-    errors.body = "Please enter a comment's body";
+    errors.body = "Please enter a post's body";
   }
 
   if (!formValues.email || formValues.email.indexOf("@") < 0) {
-    errors.email = "Please enter a comment's email";
+    errors.email = "Please enter a post's email";
   }
 
   return errors;
 };
 
-export default reduxForm({ form: "CommentForm", validate })(CommentForm);
+export default reduxForm({ form: "PostForm", validate })(PostForm);

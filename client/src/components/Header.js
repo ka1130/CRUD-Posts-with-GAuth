@@ -10,8 +10,8 @@ class Header extends Component {
         <Link to="/" className="item">
           Home
         </Link>
-        <Link to="/comments/new" className="item">
-          Post a comment
+        <Link to="/posts/new" className="item">
+          Write a post
         </Link>
         <GoogleAuth />
       </div>

@@ -1,19 +1,19 @@
 import {
-  CREATE_COMMENT,
-  EDIT_COMMENT,
-  DELETE_COMMENT,
-  FETCH_COMMENTS
+  CREATE_POST,
+  EDIT_POST,
+  DELETE_POST,
+  FETCH_POSTS
 } from "actions/types";
 
 export default function(state = [], action) {
   switch (action.type) {
-    case FETCH_COMMENTS:
+    case FETCH_POSTS:
       return [...action.payload];
-    case CREATE_COMMENT:
+    case CREATE_POST:
       return [...state, action.payload];
-    case EDIT_COMMENT:
+    case EDIT_POST:
       return [...state, action.payload];
-    case DELETE_COMMENT:
+    case DELETE_POST:
       return [...state].filter(elem => elem.id !== action.payload);
     default:
       return state;

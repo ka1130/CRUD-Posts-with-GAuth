@@ -36,12 +36,9 @@ class PostShow extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  console.log(state);
-  return {
-    singlePost: state.singlePost
-  };
-};
+const mapStateToProps = state => ({
+  singlePost: state.singlePost
+});
 
 export default connect(
   mapStateToProps,

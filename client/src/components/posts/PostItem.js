@@ -27,7 +27,7 @@ class PostItem extends Component {
         <div className="content">
           <p className="header">{post.title}</p>
           <div className="description">{post.body}</div>
-          <Link to={`/posts/${post.id}`}>See post</Link>
+          <Link to={`/posts/${post.id}`}>Go to the post</Link>
         </div>
       </div>
     );

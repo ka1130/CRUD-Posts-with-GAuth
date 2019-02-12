@@ -8,7 +8,7 @@ function* handlePostsLoad() {
     const posts = yield call(fetchPosts);
     yield put(setPosts(posts));
   } catch (error) {
-    yield put(setError(error));
+    yield put(setError(error.toString()));
   }
 }
 

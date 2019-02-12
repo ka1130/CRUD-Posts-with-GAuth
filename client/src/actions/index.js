@@ -5,8 +5,8 @@ import {
   EDIT_POST,
   DELETE_POST,
   LOAD_POSTS,
-  FETCH_POSTS_SUCCESS,
-  FETCH_POSTS_ERROR,
+  LOAD_POSTS_SUCCESS,
+  LOAD_POSTS_ERROR,
   FETCH_SINGLE_POST,
   SIGN_IN,
   SIGN_OUT
@@ -15,11 +15,11 @@ import {
 export const loadPosts = () => ({ type: LOAD_POSTS });
 
 export const setPosts = posts => ({
-  type: FETCH_POSTS_SUCCESS,
+  type: LOAD_POSTS_SUCCESS,
   payload: posts
 });
 
-export const setError = error => ({ type: FETCH_POSTS_ERROR, payload: error });
+export const setError = error => ({ type: LOAD_POSTS_ERROR, payload: error });
 
 /**************************************************** */
 

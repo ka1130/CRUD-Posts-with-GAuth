@@ -2,12 +2,12 @@ import {
   CREATE_POST,
   EDIT_POST,
   DELETE_POST,
-  FETCH_POSTS_SUCCESS
+  LOAD_POSTS_SUCCESS
 } from "actions/types";
 
 export default function(state = [], action) {
   switch (action.type) {
-    case FETCH_POSTS_SUCCESS:
+    case LOAD_POSTS_SUCCESS:
       return [...action.payload];
     case CREATE_POST:
       return [...state, action.payload];

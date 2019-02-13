@@ -1,15 +1,32 @@
 import { takeEvery, takeLatest, put, call, fork } from "redux-saga/effects";
-import { LOAD_POSTS, LOAD_SINGLE_POST, CREATE_POST } from "actions/types";
+import {
+  LOAD_POSTS,
+  LOAD_SINGLE_POST,
+  CREATE_POST,
+  EDIT_POST
+} from "actions/types";
+//more general import?
 import * as actions from "actions";
 import * as api from "apis";
 import history from "../history";
+
+function* handleEditPost({ payload }) {
+  yield call(api.editPostRequest(payload.formValues, payload.id));
+  history.push("/");
+}
+
+function* watchEditPost() {
+  yield takeLatest(EDIT_POST, handleEditPost);
+}
 
 function* handleCreatePost({ post }) {
   try {
     yield call(api.createPost(post));
     history.push("/");
   } catch (error) {
-    console.log(error); // handle error otherwise?
+    yield put(actions.setError(error.toString()));
+    // separate error action to all errors?
+    // here error action from fetchnig all posts reused - rightly so?
   }
 }
 
@@ -48,7 +65,8 @@ function* watchPostsLoad() {
 const postsSagas = [
   fork(watchSinglePostLoad),
   fork(watchPostsLoad),
-  fork(watchCreatePost)
+  fork(watchCreatePost),
+  fork(watchEditPost)
 ];
 
 export default postsSagas;

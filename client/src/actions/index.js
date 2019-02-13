@@ -35,17 +35,20 @@ export const setSinglePostError = error => ({
   payload: error
 });
 
-export const createPost = post => {
-  return { type: CREATE_POST, post };
+export const createPost = post => ({ type: CREATE_POST, post });
+
+export const editPost = (formValues, id) => {
+  //formValues too? what params here?
+  return { type: EDIT_POST, payload: { formValues, id } };
 };
 
 /**************************************************** */
 
-export const editPost = (formValues, id) => async dispatch => {
-  const response = await posts.patch(`/posts/${id}`, formValues);
-  dispatch({ type: EDIT_POST, payload: response.data });
-  history.push("/");
-};
+// export const editPost = (formValues, id) => async dispatch => {
+//   const response = await posts.patch(`/posts/${id}`, formValues);
+//   dispatch({ type: EDIT_POST, payload: response.data });
+//   history.push("/");
+// };
 
 export const deletePost = id => async dispatch => {
   await posts.delete(`/posts/${id}`);

@@ -10,7 +10,7 @@ export default function(state = [], action) {
     case LOAD_POSTS_SUCCESS:
       return [...action.payload];
     case CREATE_POST:
-      return [...state, action.payload];
+      return [...state, action.post];
     case EDIT_POST:
       return [...state, action.payload];
     case DELETE_POST:

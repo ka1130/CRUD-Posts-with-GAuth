@@ -35,13 +35,11 @@ export const setSinglePostError = error => ({
   payload: error
 });
 
-/**************************************************** */
-
-export const createPost = post => async dispatch => {
-  const response = await posts.post("/posts", post);
-  dispatch({ type: CREATE_POST, payload: response.data });
-  history.push("/");
+export const createPost = post => {
+  return { type: CREATE_POST, post };
 };
+
+/**************************************************** */
 
 export const editPost = (formValues, id) => async dispatch => {
   const response = await posts.patch(`/posts/${id}`, formValues);

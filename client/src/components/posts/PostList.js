@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import uuidv4 from "uuid/v1";
-import { fetchPosts } from "actions";
+import { loadPosts } from "actions";
 import PostItem from "components/posts/PostItem";
 
 class PostList extends Component {
   componentDidMount() {
-    this.props.fetchPosts();
+    this.props.loadPosts();
   }
 
   renderPosts = () =>
@@ -31,5 +31,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { fetchPosts: fetchPosts }
+  { loadPosts }
 )(PostList);

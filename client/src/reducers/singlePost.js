@@ -1,8 +1,8 @@
-import { FETCH_SINGLE_POST } from "actions/types";
+import { LOAD_SINGLE_POST_SUCCESS } from "actions/types";
 
 export default function(state = {}, action) {
   switch (action.type) {
-    case FETCH_SINGLE_POST:
+    case LOAD_SINGLE_POST_SUCCESS:
       return action.payload;
     default:
       return state;

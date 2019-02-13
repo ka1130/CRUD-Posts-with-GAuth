@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { editPost, fetchSinglePost } from "actions";
+import { editPost, loadSinglePost } from "actions";
 import PostForm from "components/posts/PostForm";
 
 class PostEdit extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
-    this.props.fetchSinglePost(id);
+    this.props.loadSinglePost(id);
   }
 
   handleSubmit = formValues => {
@@ -25,14 +25,11 @@ class PostEdit extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  console.log(state);
-  return {
-    post: state.singlePost
-  };
-};
+const mapStateToProps = state => ({
+  post: state.singlePost
+});
 
 export default connect(
   mapStateToProps,
-  { editPost, fetchSinglePost }
+  { editPost, loadSinglePost }
 )(PostEdit);

@@ -14,7 +14,7 @@ import {
   SIGN_OUT
 } from "actions/types";
 
-export const loadPosts = () => ({ type: LOAD_POSTS }); //do we need this one?
+export const loadPosts = () => ({ type: LOAD_POSTS });
 
 export const setPosts = posts => ({
   type: LOAD_POSTS_SUCCESS,
@@ -23,7 +23,7 @@ export const setPosts = posts => ({
 
 export const setError = error => ({ type: LOAD_POSTS_ERROR, payload: error });
 
-export const loadSinglePost = id => ({ type: LOAD_SINGLE_POST, id }); //do we need this one?
+export const loadSinglePost = id => ({ type: LOAD_SINGLE_POST, id });
 
 export const setSinglePost = post => ({
   type: LOAD_SINGLE_POST_SUCCESS,
@@ -36,11 +36,6 @@ export const setSinglePostError = error => ({
 });
 
 /**************************************************** */
-
-// export const loadSinglePost = id => async dispatch => {
-//   const response = await posts.get(`/posts/${id}`);
-//   dispatch({ type: LOAD_SINGLE_POST, payload: response.data });
-// };
 
 export const createPost = post => async dispatch => {
   const response = await posts.post("/posts", post);

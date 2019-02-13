@@ -5,8 +5,10 @@ import { setSinglePost, setSinglePostError } from "actions";
 
 function* handleSinglePostLoad({ id }) {
   try {
-    const post = yield call(fetchSinglePost(id));
-    yield put(setSinglePost(post));
+    if (id) {
+      const post = yield call(fetchSinglePost(id));
+      yield put(setSinglePost(post));
+    }
   } catch (error) {
     yield put(setSinglePostError(error.toString()));
   }

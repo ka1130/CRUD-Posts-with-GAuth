@@ -7,8 +7,8 @@ import { loadSinglePost } from "actions";
 class PostShow extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
-    // this.props.loadSinglePost(id);
-    this.props.loadSinglePost("7");
+    console.log(id);
+    this.props.loadSinglePost(id);
   }
 
   render() {

@@ -8,6 +8,7 @@ class PostShow extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
     // this.props.loadSinglePost(id);
+    this.props.loadSinglePost("7");
   }
 
   render() {
@@ -41,6 +42,6 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-  mapStateToProps
-  // { loadSinglePost }
+  mapStateToProps,
+  { loadSinglePost }
 )(PostShow);

@@ -7,6 +7,5 @@ export const fetchPosts = async () => {
 
 export const fetchSinglePost = id => async () => {
   const response = await axios.get(`http://localhost:3001/posts/${id}`);
-  console.log(response.data);
   return response.data;
 };

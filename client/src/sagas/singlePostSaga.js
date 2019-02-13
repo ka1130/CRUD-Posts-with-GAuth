@@ -3,9 +3,9 @@ import { LOAD_SINGLE_POST } from "actions/types";
 import { fetchSinglePost } from "apis";
 import { setSinglePost, setSinglePostError } from "actions";
 
-function* handleSinglePostLoad() {
+function* handleSinglePostLoad({ id }) {
   try {
-    const post = yield call(fetchSinglePost("7")); // change this hard-coded id
+    const post = yield call(fetchSinglePost(id));
     yield put(setSinglePost(post));
   } catch (error) {
     yield put(setSinglePostError(error.toString()));

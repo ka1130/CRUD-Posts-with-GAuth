@@ -23,7 +23,7 @@ export const setPosts = posts => ({
 
 export const setError = error => ({ type: LOAD_POSTS_ERROR, payload: error });
 
-export const loadSinglePost = () => ({ type: LOAD_SINGLE_POST }); //do we need this one?
+export const loadSinglePost = id => ({ type: LOAD_SINGLE_POST, id }); //do we need this one?
 
 export const setSinglePost = post => ({
   type: LOAD_SINGLE_POST_SUCCESS,

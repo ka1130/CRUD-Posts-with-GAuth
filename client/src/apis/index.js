@@ -5,8 +5,11 @@ export const editPostRequest = (formValues, id) => async () => {
     `http://localhost:3001/posts/${id}`,
     formValues
   );
-  console.log(response.data);
   return response.data;
+};
+
+export const deletePostRequest = id => async () => {
+  await axios.delete(`http://localhost:3001/posts/${id}`);
 };
 
 export const createPost = post => async () => {

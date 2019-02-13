@@ -8,7 +8,6 @@ import Modal from "components/Modal";
 class PostDelete extends Component {
   renderActions = () => {
     const { id } = this.props.match.params;
-    console.log(id);
     return (
       <React.Fragment>
         <button

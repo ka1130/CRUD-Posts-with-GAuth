@@ -2,18 +2,6 @@
   "posts": [
     {
       "userId": 1,
-      "id": 1,
-      "title": "Hello world!",
-      "body": " I’ve analyzed posts from some of the top Facebook pages to show you how to stand out from the crowd and create awesome Facebook posts - including tips on what to do, what to test, and what to avoid."
-    },
-    {
-      "userId": 1,
-      "id": 2,
-      "title": "Welcome to Ghost",
-      "body": "All blog post files must begin with front matter which is typically used to set a layout or other meta data."
-    },
-    {
-      "userId": 1,
       "id": 3,
       "title": "Categories and Tags",
       "body": "Jekyll has first class support for categories and tags in blog posts. The difference between categories and tags is a category can be part of the URL for a post whereas a tag cannot."
@@ -59,11 +47,6 @@
       "id": 10,
       "title": "Passing parameters to includesPermalink",
       "body": "Passing parameters to includes is especially helpful when you want to hide away complex formatting from your Markdown content."
-    },
-    {
-      "title": "sss",
-      "body": "sss",
-      "id": 11
     }
   ]
 }

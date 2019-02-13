@@ -3,7 +3,8 @@ import {
   LOAD_POSTS,
   LOAD_SINGLE_POST,
   CREATE_POST,
-  EDIT_POST
+  EDIT_POST,
+  DELETE_POST
 } from "actions/types";
 //more general import?
 import * as actions from "actions";
@@ -11,12 +12,21 @@ import * as api from "apis";
 import history from "../history";
 
 function* handleEditPost({ payload }) {
-  yield call(api.editPostRequest(payload.formValues, payload.id));
+  yield call(api.editPostRequest(payload.formValues, payload.id)); // further destructure
   history.push("/");
 }
 
 function* watchEditPost() {
   yield takeLatest(EDIT_POST, handleEditPost);
+}
+
+function* handleDeletePost(action) {
+  yield call(api.deletePostRequest(action.payload));
+  history.push("/");
+}
+
+function* watchDeletePost() {
+  yield takeLatest(DELETE_POST, handleDeletePost);
 }
 
 function* handleCreatePost({ post }) {
@@ -66,7 +76,8 @@ const postsSagas = [
   fork(watchSinglePostLoad),
   fork(watchPostsLoad),
   fork(watchCreatePost),
-  fork(watchEditPost)
+  fork(watchEditPost),
+  fork(watchDeletePost)
 ];
 
 export default postsSagas;

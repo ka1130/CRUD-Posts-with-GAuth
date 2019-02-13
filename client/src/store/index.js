@@ -16,7 +16,6 @@ const configureStore = () => {
     )
   );
   sagaMiddleware.run(rootSaga);
-  store.dispatch({ type: "LOAD_SINGLE_POST" });
   return store;
 };
 

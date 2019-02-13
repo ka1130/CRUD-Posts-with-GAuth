@@ -1,11 +1,5 @@
 import { takeEvery, takeLatest, put, call, fork } from "redux-saga/effects";
-import {
-  LOAD_POSTS,
-  LOAD_SINGLE_POST,
-  CREATE_POST,
-  EDIT_POST,
-  DELETE_POST
-} from "actions/types";
+import * as constants from "actions/types";
 //more general import?
 import * as actions from "actions";
 import * as api from "apis";
@@ -17,7 +11,7 @@ function* handleEditPost({ payload }) {
 }
 
 function* watchEditPost() {
-  yield takeLatest(EDIT_POST, handleEditPost);
+  yield takeLatest(constants.EDIT_POST, handleEditPost);
 }
 
 function* handleDeletePost(action) {
@@ -26,7 +20,7 @@ function* handleDeletePost(action) {
 }
 
 function* watchDeletePost() {
-  yield takeLatest(DELETE_POST, handleDeletePost);
+  yield takeLatest(constants.DELETE_POST, handleDeletePost);
 }
 
 function* handleCreatePost({ post }) {
@@ -41,7 +35,7 @@ function* handleCreatePost({ post }) {
 }
 
 function* watchCreatePost() {
-  yield takeLatest(CREATE_POST, handleCreatePost);
+  yield takeLatest(constants.CREATE_POST, handleCreatePost);
 }
 
 function* handleSinglePostLoad({ id }) {
@@ -56,7 +50,7 @@ function* handleSinglePostLoad({ id }) {
 }
 
 function* watchSinglePostLoad() {
-  yield takeEvery(LOAD_SINGLE_POST, handleSinglePostLoad);
+  yield takeEvery(constants.LOAD_SINGLE_POST, handleSinglePostLoad);
 }
 
 function* handlePostsLoad() {
@@ -69,7 +63,7 @@ function* handlePostsLoad() {
 }
 
 function* watchPostsLoad() {
-  yield takeEvery(LOAD_POSTS, handlePostsLoad);
+  yield takeEvery(constants.LOAD_POSTS, handlePostsLoad);
 }
 
 const postsSagas = [

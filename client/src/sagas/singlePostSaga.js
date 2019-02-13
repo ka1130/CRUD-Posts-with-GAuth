@@ -4,9 +4,12 @@ import { fetchSinglePost } from "apis";
 import { setSinglePost, setSinglePostError } from "actions";
 
 function* handleSinglePostLoad() {
-  console.log("fetching single post");
-  const post = yield call(fetchSinglePost("7")); // change this hard-coded id
-  yield put(setSinglePost(post));
+  try {
+    const post = yield call(fetchSinglePost("7")); // change this hard-coded id
+    yield put(setSinglePost(post));
+  } catch (error) {
+    yield put(setSinglePostError(error.toString()));
+  }
 }
 
 export default function* watchSinglePostLoad() {

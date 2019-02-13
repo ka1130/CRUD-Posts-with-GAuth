@@ -5,7 +5,9 @@ A basic app with custom API allowing logged in users to perform CRUD actions on 
 ## Posts basic CRUD app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-The technology stack includes **React**, **React-Router-DOM**, **Redux**, **Redux-Form** and **Redux-Thunk**.
+The technology stack includes **React**, **React-Router-DOM**, **Redux**, **Redux-Form** and **Redux-Saga**.
+
+An alternative solution with the use of **Redux-Thunk** is implemented on branch `redux-thunk-solution`.
 
 Custom API is created with the use of [json-server](https://github.com/typicode/json-server) and data is kept internally in `db.json` file.
 

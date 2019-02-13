@@ -1,7 +1,5 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
-import thunk from "redux-thunk";
-// ^ delete it afterwards
 import rootReducer from "reducers";
 import rootSaga from "sagas";
 
@@ -10,7 +8,7 @@ const configureStore = () => {
   const store = createStore(
     rootReducer,
     compose(
-      applyMiddleware(thunk, sagaMiddleware),
+      applyMiddleware(sagaMiddleware),
       window.__REDUX_DEVTOOLS_EXTENSION__ &&
         window.__REDUX_DEVTOOLS_EXTENSION__()
     )

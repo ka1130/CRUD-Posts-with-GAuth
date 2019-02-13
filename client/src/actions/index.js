@@ -7,7 +7,9 @@ import {
   LOAD_POSTS,
   LOAD_POSTS_SUCCESS,
   LOAD_POSTS_ERROR,
-  FETCH_SINGLE_POST,
+  LOAD_SINGLE_POST,
+  LOAD_SINGLE_POST_SUCCESS,
+  LOAD_SINGLE_POST_ERROR,
   SIGN_IN,
   SIGN_OUT
 } from "actions/types";
@@ -23,9 +25,9 @@ export const setError = error => ({ type: LOAD_POSTS_ERROR, payload: error });
 
 /**************************************************** */
 
-export const fetchSinglePost = id => async dispatch => {
+export const loadSinglePost = id => async dispatch => {
   const response = await posts.get(`/posts/${id}`);
-  dispatch({ type: FETCH_SINGLE_POST, payload: response.data });
+  dispatch({ type: LOAD_SINGLE_POST, payload: response.data });
 };
 
 export const createPost = post => async dispatch => {

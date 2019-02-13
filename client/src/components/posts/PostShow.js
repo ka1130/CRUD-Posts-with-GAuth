@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import faker from "faker";
-import { fetchSinglePost } from "actions";
+import { loadSinglePost } from "actions";
 
 class PostShow extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
-    this.props.fetchSinglePost(id);
+    this.props.loadSinglePost(id);
   }
 
   render() {
@@ -42,5 +42,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { fetchSinglePost }
+  { loadSinglePost }
 )(PostShow);

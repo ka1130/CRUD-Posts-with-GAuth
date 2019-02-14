@@ -10,5 +10,6 @@ export const LOAD_SINGLE_POST = "LOAD_SINGLE_POST";
 export const LOAD_SINGLE_POST_SUCCESS = "LOAD_SINGLE_POST_SUCCESS";
 export const LOAD_SINGLE_POST_ERROR = "LOAD_SINGLE_POST_ERROR";
 
+export const SET_GAUTH = "SET_GAUTH";
 export const SIGN_IN = "SIGN_IN";
 export const SIGN_OUT = "SIGN_OUT";
